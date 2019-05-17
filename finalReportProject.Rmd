@@ -1,5 +1,13 @@
 #Anayeli ochoa
-```{r}
-library(dplyr)
+#Final project
 
+```{r}
+# . At least one hierarchical cluster analysis. Be aware cluster analysis can only be used on numerical variables - dont' use any categorical variables in the cluster analysis.
+library(ape)
+#Read the data file.
+allData17 <- read.csv("NYCHVS 2017 Occupied File for ASA Challenge_CSV.csv", TRUE)
+arr_dist <- dist(allData17, method = "euclidean")
+arr_clust <- hclust(arr_dist)
+arr_tree <- as.phylo(arr_clust)
+plot(arr_tree, cex = 0.1)
 ```
